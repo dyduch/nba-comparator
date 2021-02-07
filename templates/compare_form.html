@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='compare_forms.css') }}">
+{% endblock %}
+{% block content %}
+    <header>
+        <h1>Compare players</h1>
+    </header>
+    <section>
+        <form action="" method="post">
+            <article class="player-form">
+                <p>
+                    {{ form.first_player_name.label }}
+                    {{ form.first_player_name }}
+                </p>
+                <p>
+                    {{ form.first_season_start.label }}
+                    {{ form.first_season_start(size=4) }}
+                </p>
+                <p>
+                    {{ form.first_season_end.label }}
+                    {{ form.first_season_end(size=4) }}
+                </p>
+            </article>
+            <article class="player-form">
+                <p>
+                    {{ form.second_player_name.label }}
+                    {{ form.second_player_name }}
+                </p>
+                <p>
+                    {{ form.second_season_start.label }}
+                    {{ form.second_season_start(size=4) }}
+                </p>
+                <p>
+                    {{ form.second_season_end.label }}
+                    {{ form.second_season_end(size=4) }}
+                </p>
+            </article>
+            <p>{{ form.submit() }}</p>
+        </form>
+    </section>
+
+{% endblock %}

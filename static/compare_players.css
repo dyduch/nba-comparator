@@ -1,0 +1,29 @@
+
+header h1 {
+    font-size: 30px;
+}
+
+header img {
+    height: auto;
+    width: 50%;
+}
+
+header {
+    text-align: center;
+    margin: 0 auto;
+}
+
+section .comparisons {
+    text-align: center;
+}
+
+article {
+    text-align: center;
+    width: 300px;
+    padding: 10px;
+    border: 2px solid grey;
+    border-radius: 20px;
+    background-color: #EEEEEE;
+    box-shadow: 2px 2px grey;
+    display: inline-block;
+}

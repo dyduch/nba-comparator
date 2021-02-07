@@ -1,0 +1,19 @@
+
+header {
+    margin: 0 auto;
+    text-align: center;
+}
+
+section {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.player-form {
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 20px;
+    display: inline-block;
+}
+

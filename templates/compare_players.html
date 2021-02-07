@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='compare_players.css') }}">
+{% endblock %}
+{% block content %}
+    <section class="comparisons">
+        {% for player in players %}
+            <article class="player">
+                <header>
+                    <h1 class="name">{{ player.name }}</h1>
+                    <hr>
+                    <img src={{ player.img }}>
+                    <h3 class="seasons">From {{ player.first_season }} to {{ player.last_season }}</h3>
+                </header>
+                <hr>
+                <main>
+                    <div class="general">
+                        <p class="games">{{ player.g }} Games</p>
+                        <p class="games_started">{{ player.gs }} Games Started</p>
+                        <p class="minutes">{{ player.mp_per_g }} MPG</p>
+                    </div>
+                    <hr>
+                    <div class="scoring">
+                        <p class="points">{{ player.pts_per_g }} PPG</p>
+
+                        <p class="fg_pct">{{ player.fg_pct }} FG%</p>
+                        <p class="fg">{{ player.fg_per_g }} FG Made</p>
+                        <p class="fga">{{ player.fga_per_g }} FG Attempted</p>
+
+                        <p class="3pt">{{ player.fg3_per_g }} 3PT Made</p>
+                        <p class="3pta">{{ player.fg3a_per_g }} 3PT Attempted</p>
+                        <p class="3pt_pct">{{ player.fg3_pct }} 3PT%</p>
+
+                        <p class="ft">{{ player.ft_per_g }} FT Made</p>
+                        <p class="fta">{{ player.fta_per_g }} FT Attempted</p>
+                        <p class="ft_pct">{{ player.ft_pct }} FT%</p>
+                    </div>
+                    <hr>
+
+                    <div class="defence">
+                        <p class="rebounds">{{ player.trb_per_g }} REB</p>
+                        <p class="steals">{{ player.stl_per_g }} STL</p>
+                        <p class="blocks">{{ player.blk_per_g }} BLK</p>
+                        <p class="fouls">{{ player.pf_per_g }} Fouls</p>
+                    </div>
+                    <hr>
+                    <div class="playmaking">
+                        <p class="assists">{{ player.ast_per_g }} AST</p>
+                        <p class="turnovers">{{ player.tov_per_g }} TOV</p>
+                    </div>
+                </main>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}
